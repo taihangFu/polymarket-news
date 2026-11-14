@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Polymarket 每日新聞／盤口報告</title>
+  <style>
+    :root { color-scheme: light dark; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: ui-sans-serif, system-ui, "PingFang HK", "Noto Sans CJK TC", sans-serif;
+      background: #111;
+      color: #eee;
+    }
+    main { max-width: 42rem; margin: 0 auto; padding: 2.5rem 1.5rem; line-height: 1.65; }
+    h1 { font-size: 1.5rem; font-weight: 600; margin: 0 0 0.75rem; }
+    p { margin: 0 0 0.75rem; color: #c8c8c8; }
+    a { color: #8ec8ff; }
+    #reports { margin-top: 1.5rem; }
+    #reports li { margin: 0.4rem 0; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Polymarket 每日新聞／盤口報告</h1>
+    <p>對照 X 突發新聞同 Polymarket 盤口的詳細報告（繁體中文）。舊 Paper 看板已封存，報告只會喺呢個站更新。</p>
+    <p>尚未有已發布報告。第一份通過交叉驗證後會顯示喺下面。</p>
+    <ul id="reports"></ul>
+  </main>
+  <script>
+    fetch("data.json?ts=" + Date.now())
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (d) {
+        if (!d || !d.reports || !d.reports.length) return;
+        var ul = document.getElementById("reports");
+        d.reports.forEach(function (item) {
+          var li = document.createElement("li");
+          var a = document.createElement("a");
+          a.href = item.url;
+          a.textContent = (item.date || "") + " · " + (item.title || item.url);
+          li.appendChild(a);
+          ul.appendChild(li);
+        });
+      })
+      .catch(function () {});
+  </script>
+</body>
+</html>
