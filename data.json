@@ -1,8 +1,17 @@
 {
   "schemaVersion": 1,
   "timezone": "Asia/Hong_Kong",
-  "updatedAt": "2026-11-14T14:04:26+08:00",
+  "updatedAt": "2026-11-20T10:01:00+08:00",
   "reports": [
+    {
+      "date": "2026-11-20",
+      "title": "突發新聞／Polymarket 日報｜2026-11-20",
+      "url": "reports/2026-11-20/",
+      "cutoffHKT": "2026-11-20 09:45 HKT",
+      "pushedAtHKT": "2026-11-20 10:01 HKT",
+      "gate": "初審 PASS（soft）；終審 PASS（soft）",
+      "summary": "Anthropic 11/19 以 ANT 上市（定價 3、收市 7.17、+17.1%）。Nvidia 董事會主席表明無意讓黃仁勳回任，回任 12/31 由 13.05¢ 跌至 5.75¢；12/1 閉門問話不等於公開作證盤（65.5¢）Yes。美伊 11/8、11/15 十四日鐘已結 No。"
+    },
     {
       "date": "2026-11-14",
       "title": "突發新聞／Polymarket 日報｜2026-11-14",
